@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'joyz-ai-tree-structure';
+  tree = {
+    "a": ["b", "c"],
+    "b": ["d", "e"],
+    "c": ["f", "g"],
+    "e": ["h", "i"],
+    "f": ["j", "k"]
+  };
+
+  root: string = '';
+
+  ngOnInit(): void {
+    const keys = Object.keys(this.tree);
+    if (keys.length > 0) {
+      this.root = keys[0];
+    }
+  }
 }

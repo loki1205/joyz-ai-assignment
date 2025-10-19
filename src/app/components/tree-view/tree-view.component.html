@@ -1,0 +1,14 @@
+<ul>
+  <li>
+    <span *ngIf="!isRoot">- </span>{{ rootKey }}
+    <ul *ngIf="hasChildren(rootKey)">
+      <li *ngFor="let child of getChildren(rootKey)">
+        <app-tree-view
+          [treeData]="treeData"
+          [rootKey]="child"
+          [isRoot]="false">
+        </app-tree-view>
+      </li>
+    </ul>
+  </li>
+</ul>
